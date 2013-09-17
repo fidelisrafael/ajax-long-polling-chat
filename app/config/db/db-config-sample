@@ -1,0 +1,9 @@
+<?php 
+
+define('DB_HOST' 	, 	'localhost');
+define('DB_NAME'	,	'you db name');
+define('DB_USER'	,	'your db user');
+define('DB_PASS'	,	'your db pass');
+define('MIGRATIONS_FOLDER' , __DIR__ . "/migrations"); /* don't touch me */
+
+?>
