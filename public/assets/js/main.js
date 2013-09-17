@@ -138,19 +138,28 @@ var simpleChat ;
 		
 		appendMessage: function(html) {
 			this.messagesWrapper.innerHTML += html ; 
+			var lastMessage = this.messagesWrapper.querySelector("li:last-child");
+			window.scrollTo(0,lastMessage.offsetTop || 0);
 		},
 		
+		playNotificationSound: function() {
+			document.querySelector("#notification_sound").play();
+		},
+
 		waitForNewMessages: function(timestamp) {
 			var self = this;
 			this.ajaxClient.post('get-new-messages/' , this.encodeURLData({timestamp: timestamp}) , function(data) {
-
-				console.log(data);
 				
 				data 		= JSON.parse(data);
+
+				console.log(data);
+
 				var html 	= self.generateHTML(data.messages);
 
 				self.appendMessage(html);
-
+				if(!data.timeout && (data.username != self.username)) 
+					self.playNotificationSound();
+				
 				self.waitForNewMessages(data.timestamp);
 			});
 		}

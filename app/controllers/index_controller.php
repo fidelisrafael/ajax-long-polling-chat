@@ -59,7 +59,7 @@ class IndexController extends BaseController {
 		} else {
 			$this->_invalid_request();
 		}
-	}	
+	}
 
 	// insert a new message in database (no validations)
 	protected function _new_message() {
@@ -71,7 +71,7 @@ class IndexController extends BaseController {
 			$this->JSONOutput(array("success" => $message->save()));
 		} else {
 			$this->_invalid_request();
-		}			
+		}		
 	}
 
 	/* Alias for requests */

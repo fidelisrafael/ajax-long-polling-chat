@@ -121,28 +121,28 @@ form #new_message {
 	padding:0;
 	list-style-type: none;
 	overflow-y:scroll;
-	max-height: 450px;
+	/*max-height: 450px;*/
 
 }
 .messages-wrapper ul#messages li {
-	padding:2px;
+	padding:10px 6px 6px 6px;
 	margin-bottom:5px;
 }
 
 .messages-list .message-owner {
 	font-weight: bold;
 	padding-right: 15px;
-	width: 113px;
 	display: inline-block;
 	overflow: hidden;
+	width:100px;
 }
 
 .messages-list .message {
 	font-style: italic;
 	display: inline-block;
-	 max-width: 75%;
-	 word-break: break-word;
-	 font-size:0.8em;
+	word-break: break-word;
+ 	font-size:0.8em;
+ 	padding-left:12px;
 }
 
 .messages-list .message-owner , .messages-list .message-date {

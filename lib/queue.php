@@ -20,6 +20,7 @@ class Queue {
 		if($has_new_messages['has_new_messages'] && $messages = $has_new_messages['messages']) {
 			$last_message 				 = end($messages);
 			$this->response['timestamp'] = $last_message->created_at;
+			$this->response['username']	 = $last_message->username;
 			return true;
 		};
 		return false;

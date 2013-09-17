@@ -16,3 +16,11 @@
 	</div>
 </div>
 
+
+<div class="audio-wrapper" style='display:none;position:absolute;'>
+	<audio preload id='notification_sound'>
+		<source src="public/files/sounds/notification.mp3"></source>
+		<source src="public/files/sounds/notification.ogg"></source>
+	</audio>
+</div>
+
