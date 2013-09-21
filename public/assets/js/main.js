@@ -56,13 +56,19 @@ var simpleChat ;
 				// use HTML5 FormData
 				self.sendMessage(self.newMessageText.value)
 			});
-			var d 			= new Date(),
+			
+
+			this.promptUserName() ;
+			self.waitForNewMessages(self.getTimestamp());
+		},
+
+		getTimestamp: function(timestamp) {
+			var d 			= timestamp != undefined ? new Date(timestamp) : new Date(),
 				date 		= d.toISOString().slice(0,10),
 				time 		= d.toTimeString().slice(0,8),
 				timestamp   = (date + " " + time).trim();
 
-			this.promptUserName() ;
-			self.waitForNewMessages(timestamp);
+			return timestamp;
 		},
 
 		promptUserName: function() {
@@ -113,8 +119,8 @@ var simpleChat ;
 		},
 
 		generateMessageHTML: function(message) {
-			var date =  new Date(message.created_at);
-			return ["<li>" , "<span class='message-date icon time'>&nbsp;" , date.toLocaleString() , "&nbsp; | &nbsp;</span>" , "<span class='message-owner icon user'>&nbsp;" , message.username , "</span>"  , "<span class='message'>" , message.message , "</span>" , "</li>" ].join('');	
+			var date =  this.getTimestamp();
+			return ["<li>" , "<span class='message-date icon time'>&nbsp;" , date , "&nbsp; | &nbsp;</span>" , "<span class='message-owner icon user'>&nbsp;" , message.username , "</span>"  , "<span class='message'>" , message.message , "</span>" , "</li>" ].join('');	
 		},
 
 		generateHTML: function(messages) {

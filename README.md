@@ -12,7 +12,8 @@ I made it just for fun , but maybe it can help someone in any place of the world
 This chat works keeping a **single** connection open between `client` and `server` ,  this connection will be the responsible to detect any replies from server , and when it occurs, the connection is closed, and a new  `HTTP request` is opened to keep watching the server again. 	
 
 
-This app runs over a **very** simple *framework* , or a kind of , that i've developed for this app. *(It just do basic URL matches, controllers logic and views rendering)*
+This app runs over a **very** simple *framework* , or a kind of , that i've developed for this app. *(It just do basic URL matches, controllers logic and views rendering)* 	 
+No jQuery dependency for `XHR` requests and DOM updates. 
 
 ----
 ### Setup
