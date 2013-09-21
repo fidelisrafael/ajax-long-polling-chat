@@ -35,7 +35,6 @@ No jQuery dependency for `XHR` requests and DOM updates.
 - Better documentation
 - User's  authentication(i'm not planning this, but who knows)
 - Basic framework's docs(just go ahead and study this if you're curious, it's very very simple)
-- Improve CSS of mobile versions
 - Improve mysql perfomance
 - Tests
 
