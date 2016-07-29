@@ -11,7 +11,7 @@ class Message {
 		$message 	= self::__connect()->prepare("INSERT INTO `messages` (`id`, `username`, `message`, `created_at`) VALUES (:id,:username , :message, :timestamp)");
 
 		$data 		= array (
-			":id"			=> 'NULL',
+			":id"			=> NULL,
 			":username" 	=> $this->data['username'] ,
 			":message" 		=> $this->data['message'],
 			":timestamp"	=> date("y/m/d G:i:s")
